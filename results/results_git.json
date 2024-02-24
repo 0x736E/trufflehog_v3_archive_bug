@@ -1,0 +1,2 @@
+{"level":"info-0","ts":"2024-02-24T20:25:26Z","logger":"trufflehog","msg":"running source","source_manager_worker_id":"sPJZO","with_units":true}
+{"level":"info-0","ts":"2024-02-24T20:25:26Z","logger":"trufflehog","msg":"finished scanning","chunks":0,"bytes":0,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"13.428042ms"}
