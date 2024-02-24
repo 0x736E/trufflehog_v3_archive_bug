@@ -1,7 +1,7 @@
 # Introduction
 This repository documents trufflehog archive bugs which are present in TruffleHog secrets scanner, as 
 reported in the following issues in the TruffleHog GitHub issue tracker:
-* [#000 - Archive scanning behaviour is inconsistent depending on data source](https://github.com/trufflesecurity/trufflehog/issues/0000)
+* [#2506 - Inconsistent treatment of default file archive scanning behaviour depending upon data source](https://github.com/trufflesecurity/trufflehog/issues/2506)
 
 ### Bug #??? - Archive scanning behaviour is inconsistent depending on data source
 
@@ -13,26 +13,7 @@ as Git, the default behaviour is to **_disable_** the scanning of file archives.
 This inconsistency in scanning behaviour means that not all data sources are treated equally and that different default 
 behaviours are in place depending upon the source. This is not intuitive, nor is it documented, nor is it a desirable 
 behaviour.
-
-The default behaviour as of v3.63.7 is as follows:
-
-| Data Source | skipArchives |
-|-------------|--------------|
-| CircleCI    | False        |
-| Docker      | False        |
-| FileSystem  | False        |
-| GCS         | False        |
-| _**Git**_   | _**True**_   |
-| GitHub      | False        |
-| GitLab      | False        |
-| S3          | False        |
-| SysLog      | False        |
-| TravisCI    | False        |
-
-When we compare findings for the [samples](./samples/) folder when scanned with the 'filesystem' and 'git' data sources 
-we can see that the filesystem datasource scans and produces findings for the 10 secrets located in the zip file, 
-however in the results from the scan which used the git data source we do not see this:
-
+2
 ![results screenshot](./docs/images/results_screenshot.png)
 
 #### Affected versions
